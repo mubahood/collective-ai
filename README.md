@@ -1,2 +1,0 @@
-# collective-ai-web
- 
