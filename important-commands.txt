@@ -1,0 +1,127 @@
+lsphp artisan make:component Alert --inline
+
+php artisan migrate
+
+php artisan make:migration create_crops_table
+php artisan make:migration create_course_categories_table
+php artisan make:migration create_course_chapters_table
+php artisan make:migration create_course_topics_table
+php artisan make:migration create_Users_table
+php artisan make:migration create_post_categories_table
+php artisan make:migration create_news_posts_table
+php artisan make:migration create_eevnts_table
+php artisan make:migration create_event_bookings_table
+php artisan make:migration create_event_tickets_table
+php artisan make:migration create_event_speakers_table
+php artisan make:migration create_jobs_table
+php artisan make:migration create_admin_roles_table
+php artisan make:migration create_service_providers_table 
+php artisan make:migration create_associations_table 
+php artisan make:migration create_groups_table 
+php artisan make:migration create_people_table 
+php artisan make:migration create_disabilities_table 
+php artisan make:migration create_institutions_table 
+php artisan make:migration create_counselling_centres_table 
+php artisan make:migration create_counselling_centres_table 
+php artisan make:migration create_job_applications_table 
+php artisan make:migration create_products_table 
+php artisan make:migration create_product_orders_table 
+php artisan make:migration create_crop_protocols_table 
+php artisan make:migration create_garden_table 
+php artisan make:migration create_financial_records_table 
+php artisan make:migration create_garden_activities_table 
+php artisan make:migration add_gps_to_pests_and_disease_reports --table=pests_and_disease_reports 
+php artisan make:migration add_has_listened_to_intro_to_online_course_students --table=online_course_students
+php artisan make:migration add_cols_to_gardens --table=gardens
+php artisan make:migration add_user_id_to_farmers --table=farmers
+
+
+
+
+Encore\Admin\Auth\Database\Administrator::class,
+php artisan admin:make FormSr4Controller --model=App\FormSr4
+php artisan admin:make UserController --model=App\\User
+php artisan admin:make MemberController --model=\\App\\Models\\User
+
+php artisan admin:controller --model=App\FormSr4
+php artisan admin:make ProductionRecordController --model=App\ProductionRecord
+php artisan admin:make CourseController --model=App\\Models\\Course
+php artisan admin:make UserController --model=App\\Models\\User
+php artisan admin:make MembersController --model=App\Models\User
+php artisan admin:make PostCategoryController --model=App\Models\PostCategory
+php artisan admin:make NewsPostController --model=App\Models\NewsPost
+php artisan admin:make EventController --model=App\Models\Event
+php artisan admin:make EventBookingController --model=App\Models\EventBooking
+php artisan admin:make ServiceProviderController --model=App\Models\ServiceProvider
+php artisan admin:make AssociationController --model=App\Models\Association
+php artisan admin:make GroupController --model=App\Models\Group
+php artisan admin:make PersonController --model=App\Models\Person
+php artisan admin:make DisabilityController --model=App\Models\Disability
+php artisan admin:make InstitutionController --model=App\Models\Institution
+php artisan admin:make CounsellingCentreController --model=App\Models\CounsellingCentre
+php artisan admin:make JobController --model=App\Models\Job
+php artisan admin:make JobApplicationController --model=App\Models\JobApplication
+php artisan admin:make ProductController --model=App\Models\Product
+php artisan admin:make ProductOrderController --model=App\Models\ProductOrder
+php artisan admin:make CropController --model=App\Models\Crop
+php artisan admin:make CropProtocolController --model=App\Models\CropProtocol
+php artisan admin:make RegistrationController --model=App\Models\Registration
+php artisan admin:make DistrictController --model=App\\Models\\District
+php artisan admin:make PestsAndDiseaseReportController --model=App\\Models\\PestsAndDiseaseReport
+php artisan admin:make ServiceProviderController --model=App\\Models\\ServiceProvider
+
+ --model=app\
+
+
+php artisan make:factory TeacherFactory
+
+
+php artisan make:model CropProtocol
+php artisan make:model MyClass
+php artisan make:model Student
+php artisan make:model Teacher
+php artisan make:model Subject
+php artisan make:model Exam
+php artisan make:model GeneralExam
+php artisan make:model CourseCategory
+php artisan make:model Course
+php artisan make:model CourseChapter
+php artisan make:model CourseTopic
+php artisan make:model Utils
+php artisan make:model TrafficRecord
+php artisan make:model User
+php artisan make:model Campus
+php artisan make:model UserHasProgram
+php artisan make:model Users
+php artisan make:model User
+php artisan make:model PostCategory
+php artisan make:model NewsPost
+php artisan make:model Event
+php artisan make:model EventTicket
+php artisan make:model EventBooking
+php artisan make:model EventSpeaker
+php artisan make:model AdminRoleUser
+php artisan make:model ServiceProvider
+php artisan make:model Association
+php artisan make:model Group
+php artisan make:model Person
+php artisan make:model Disability
+php artisan make:model Institution
+php artisan make:model CounsellingCentre
+php artisan make:model Job
+php artisan make:model JobApplication
+php artisan make:model Product
+php artisan make:model ProductOrder
+php artisan make:model Crop
+php artisan make:model Garden
+php artisan make:model GardenActivity
+php artisan make:model District
+php artisan make:model PestsAndDiseaseReport -m
+php artisan make:model PestsAndDisease -m
+php artisan make:model ServiceProvider -m
+php artisan make:model ServiceProvider -m
+
+
+
+
+php artisan admin:make PestsAndDiseaseController --model=App\\Models\\PestsAndDisease
