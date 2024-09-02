@@ -2,6 +2,7 @@
 
 namespace Encore\Admin\Controllers;
 
+use App\Models\User;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -25,15 +26,15 @@ class UserController extends AdminController
     protected function grid()
     {
         $userModel = config('admin.database.users_model');
+        $grid = new Grid(new User());
 
-        $grid = new Grid(new $userModel());
-
+        $grid->model()->orderBy('name', 'asc');
+        $grid->quickSearch('username', 'name')->placeholder('Search by username, name');
         $grid->column('id', 'ID')->sortable();
-        $grid->column('username', trans('admin.username'));
-        $grid->column('name', trans('admin.name'));
-        $grid->column('roles', trans('admin.roles'))->pluck('name')->label();
-        $grid->column('created_at', trans('admin.created_at'));
-        $grid->column('updated_at', trans('admin.updated_at'));
+        $grid->column('first_name', trans('admin.name'))
+            ->display(function ($name) {
+                return $this->first_name . ' ' . $this->last_name;
+            })->sortable();
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             if ($actions->getKey() == 1) {

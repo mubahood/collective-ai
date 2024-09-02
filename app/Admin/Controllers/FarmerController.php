@@ -267,7 +267,6 @@ class FarmerController extends AdminController
         $form->divider('Location Information');
 
         $parihses = Parish::getDropDownList();
-
         $form->select('parish_id', __('Parish'))->options($parihses)->rules('required');
 
 
