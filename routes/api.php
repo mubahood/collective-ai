@@ -11,18 +11,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QuestionAnswerController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\QuestionController;
+use App\Models\Utils;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+Route::get("process-price-records", [Utils::class, "process_price_records"]);
 
 Route::middleware([EnsureTokenIsValid::class])->group(function () {
     Route::get("service-providers", [ApiResurceController::class, "service_providers"]);

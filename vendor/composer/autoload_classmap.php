@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Admin\\Controllers\\AuthController' => $baseDir . '/app/Admin/Controllers/AuthController.php',
+    'App\\Admin\\Controllers\\CommodityController' => $baseDir . '/app/Admin/Controllers/CommodityController.php',
     'App\\Admin\\Controllers\\CropController' => $baseDir . '/app/Admin/Controllers/CropController.php',
+    'App\\Admin\\Controllers\\DataCollectionGeneratorController' => $baseDir . '/app/Admin/Controllers/DataCollectionGeneratorController.php',
     'App\\Admin\\Controllers\\DistrictController' => $baseDir . '/app/Admin/Controllers/DistrictController.php',
     'App\\Admin\\Controllers\\FarmerController' => $baseDir . '/app/Admin/Controllers/FarmerController.php',
     'App\\Admin\\Controllers\\FinancialRecordController' => $baseDir . '/app/Admin/Controllers/FinancialRecordController.php',
@@ -22,6 +24,7 @@ return array(
     'App\\Admin\\Controllers\\ParishController' => $baseDir . '/app/Admin/Controllers/ParishController.php',
     'App\\Admin\\Controllers\\PestsAndDiseaseController' => $baseDir . '/app/Admin/Controllers/PestsAndDiseaseController.php',
     'App\\Admin\\Controllers\\PestsAndDiseaseReportController' => $baseDir . '/app/Admin/Controllers/PestsAndDiseaseReportController.php',
+    'App\\Admin\\Controllers\\PriceRecordController' => $baseDir . '/app/Admin/Controllers/PriceRecordController.php',
     'App\\Admin\\Controllers\\ProductController' => $baseDir . '/app/Admin/Controllers/ProductController.php',
     'App\\Admin\\Controllers\\ProductionRecordController' => $baseDir . '/app/Admin/Controllers/ProductionRecordController.php',
     'App\\Admin\\Controllers\\RegistrationController' => $baseDir . '/app/Admin/Controllers/RegistrationController.php',
@@ -90,6 +93,7 @@ return array(
     'App\\Models\\Answer' => $baseDir . '/app/Models/Answer.php',
     'App\\Models\\Commodity' => $baseDir . '/app/Models/Commodity.php',
     'App\\Models\\Crop' => $baseDir . '/app/Models/Crop.php',
+    'App\\Models\\DataCollectionGenerator' => $baseDir . '/app/Models/DataCollectionGenerator.php',
     'App\\Models\\District' => $baseDir . '/app/Models/District.php',
     'App\\Models\\ExpertAnswer' => $baseDir . '/app/Models/ExpertAnswer.php',
     'App\\Models\\Farmer' => $baseDir . '/app/Models/Farmer.php',
@@ -103,6 +107,7 @@ return array(
     'App\\Models\\PestsAndDisease' => $baseDir . '/app/Models/PestsAndDisease.php',
     'App\\Models\\PestsAndDiseaseReport' => $baseDir . '/app/Models/PestsAndDiseaseReport.php',
     'App\\Models\\PostCategory' => $baseDir . '/app/Models/PostCategory.php',
+    'App\\Models\\PriceRecord' => $baseDir . '/app/Models/PriceRecord.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\ProductOrder' => $baseDir . '/app/Models/ProductOrder.php',
     'App\\Models\\ProductionRecord' => $baseDir . '/app/Models/ProductionRecord.php',

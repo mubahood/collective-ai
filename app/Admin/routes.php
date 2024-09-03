@@ -30,7 +30,7 @@ Route::group([
     $router->resource('pests-and-disease-reports', PestsAndDiseaseReportController::class);
     $router->resource('farmers', FarmerController::class);
     $router->resource('service-providers', ServiceProviderController::class);
-    
+
     /* new routes */
     $router->resource('markets', MarketController::class);
     $router->resource('commodities', CommodityController::class);
@@ -38,4 +38,6 @@ Route::group([
     $router->resource('subcounties', SubcountyController::class);
     $router->resource('parishes', ParishController::class);
     $router->resource('users', MemberController::class);
+    $router->resource('data-collection-generators', DataCollectionGeneratorController::class);
+    $router->resource('price-records', PriceRecordController::class);
 });

@@ -35,9 +35,13 @@ class MemberController extends AdminController
         $grid->column('id', 'ID')->sortable();
         $grid->column('first_name', trans('admin.name'))
             ->display(function ($name) {
-                return $this->first_name . ' ' . $this->last_name;
+                $name = $this->first_name . ' ' . $this->last_name;
+                $name = trim($name);
+                if (strlen($name) < 1) {
+                    return $this->name;
+                }
+                return $name;
             })->sortable();
-
 
         $grid->column('gender', __('Gender'))->sortable()->label([
             'Male' => 'info',
@@ -45,7 +49,7 @@ class MemberController extends AdminController
         ]);
         $grid->column('phone_number', __('Phone number'))->sortable();
         $grid->column('email', __('Email'));
-        $grid->column('avatar', __('Avatar'))->image('', 50, 50);
+        $grid->column('avatar', __('Avatar'))->image('', 50, 50)->hide();
         $grid->column('created_at', __('Registered'))->sortable()
             ->display(function ($created_at) {
                 return date('d-m-Y', strtotime($created_at));

@@ -31,7 +31,7 @@ use App\Http\Controllers\ApiResurceController;
 use App\Models\Utils;
 use Dflydev\DotAccessData\Util;
 
-//Utils::importFarmers(); 
+Utils::process_price_records(); 
 
 Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
 

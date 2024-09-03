@@ -596,7 +596,9 @@ class ComposerStaticInitda89eef54c810448a827ed04bb3da82f
 
     public static $classMap = array (
         'App\\Admin\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Admin/Controllers/AuthController.php',
+        'App\\Admin\\Controllers\\CommodityController' => __DIR__ . '/../..' . '/app/Admin/Controllers/CommodityController.php',
         'App\\Admin\\Controllers\\CropController' => __DIR__ . '/../..' . '/app/Admin/Controllers/CropController.php',
+        'App\\Admin\\Controllers\\DataCollectionGeneratorController' => __DIR__ . '/../..' . '/app/Admin/Controllers/DataCollectionGeneratorController.php',
         'App\\Admin\\Controllers\\DistrictController' => __DIR__ . '/../..' . '/app/Admin/Controllers/DistrictController.php',
         'App\\Admin\\Controllers\\FarmerController' => __DIR__ . '/../..' . '/app/Admin/Controllers/FarmerController.php',
         'App\\Admin\\Controllers\\FinancialRecordController' => __DIR__ . '/../..' . '/app/Admin/Controllers/FinancialRecordController.php',
@@ -611,6 +613,7 @@ class ComposerStaticInitda89eef54c810448a827ed04bb3da82f
         'App\\Admin\\Controllers\\ParishController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ParishController.php',
         'App\\Admin\\Controllers\\PestsAndDiseaseController' => __DIR__ . '/../..' . '/app/Admin/Controllers/PestsAndDiseaseController.php',
         'App\\Admin\\Controllers\\PestsAndDiseaseReportController' => __DIR__ . '/../..' . '/app/Admin/Controllers/PestsAndDiseaseReportController.php',
+        'App\\Admin\\Controllers\\PriceRecordController' => __DIR__ . '/../..' . '/app/Admin/Controllers/PriceRecordController.php',
         'App\\Admin\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ProductController.php',
         'App\\Admin\\Controllers\\ProductionRecordController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ProductionRecordController.php',
         'App\\Admin\\Controllers\\RegistrationController' => __DIR__ . '/../..' . '/app/Admin/Controllers/RegistrationController.php',
@@ -679,6 +682,7 @@ class ComposerStaticInitda89eef54c810448a827ed04bb3da82f
         'App\\Models\\Answer' => __DIR__ . '/../..' . '/app/Models/Answer.php',
         'App\\Models\\Commodity' => __DIR__ . '/../..' . '/app/Models/Commodity.php',
         'App\\Models\\Crop' => __DIR__ . '/../..' . '/app/Models/Crop.php',
+        'App\\Models\\DataCollectionGenerator' => __DIR__ . '/../..' . '/app/Models/DataCollectionGenerator.php',
         'App\\Models\\District' => __DIR__ . '/../..' . '/app/Models/District.php',
         'App\\Models\\ExpertAnswer' => __DIR__ . '/../..' . '/app/Models/ExpertAnswer.php',
         'App\\Models\\Farmer' => __DIR__ . '/../..' . '/app/Models/Farmer.php',
@@ -692,6 +696,7 @@ class ComposerStaticInitda89eef54c810448a827ed04bb3da82f
         'App\\Models\\PestsAndDisease' => __DIR__ . '/../..' . '/app/Models/PestsAndDisease.php',
         'App\\Models\\PestsAndDiseaseReport' => __DIR__ . '/../..' . '/app/Models/PestsAndDiseaseReport.php',
         'App\\Models\\PostCategory' => __DIR__ . '/../..' . '/app/Models/PostCategory.php',
+        'App\\Models\\PriceRecord' => __DIR__ . '/../..' . '/app/Models/PriceRecord.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\ProductOrder' => __DIR__ . '/../..' . '/app/Models/ProductOrder.php',
         'App\\Models\\ProductionRecord' => __DIR__ . '/../..' . '/app/Models/ProductionRecord.php',
