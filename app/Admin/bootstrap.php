@@ -28,10 +28,29 @@ use Illuminate\Support\Facades\Auth;
 use App\Admin\Extensions\Nav\Shortcut;
 use App\Admin\Extensions\Nav\Dropdown;
 use App\Http\Controllers\ApiResurceController;
+use App\Models\PriceRecord;
+use App\Models\User;
 use App\Models\Utils;
 use Dflydev\DotAccessData\Util;
 
 Utils::process_price_records(); 
+/* $u = Auth::user();
+$u = User::find($u->id);
+$array = [];
+if($u->middle_name!= null){
+    if(is_array($u->middle_name)){
+        $array = $u->middle_name;
+    }
+}
+
+$markets = $array;
+$d = PriceRecord::whereIn(
+    'market_id',
+    $markets
+)->orderby('id', 'desc')->get();
+dd($d);
+dd($u->middle_name);
+ */
 
 Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
 

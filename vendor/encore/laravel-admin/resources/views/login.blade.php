@@ -27,8 +27,8 @@
   <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition login-page" style="background: url({{ asset('assets/images/gnut.jpg') }}) no-repeat;background-size: cover;">
-<nav class="navbar navbar-default" role="navigation" >
+<body class="hold-transition login-page" style="background: url({{ asset('assets/images/bg.png') }}) no-repeat;background-size: cover;">
+{{-- <nav class="navbar navbar-default" role="navigation" >
     <div class="container">
        <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
@@ -42,7 +42,7 @@
         <span class="brand-text" style="font-size: 18px; font-weight: bold;">NARO GROUNDNUTS</span>
     </a>
 </div>
-
+ --}}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
@@ -74,10 +74,10 @@
 <div class="login-box">
   <!-- /.login-logo -->
    
-<div class="login-box-body" style="border: 3px solid green; border-radius: 25px;">
+<div class="login-box-body" style="border: 3px solid blue; border-radius: 25px;">
 <div class="login-logo">
     <a href="{{ admin_url('/') }}">
-    <img src="{{ asset('assets/images/logo.jpeg') }}" alt="Logo" style="max-width: 35%; height: 35%;">
+    <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" style="max-width: 35%; height: 35%;">
     </a>
     
 </div>

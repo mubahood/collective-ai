@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'Naro Groundnut',
+    'name' => 'C.A.I.T Groundnut',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>Naro</b> admin',
+    'logo' => '<b>C.A.I.T</b> admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>Naro</b>',
+    'logo-mini' => '<b>C.A.I.T</b>',
 
     /*
     |--------------------------------------------------------------------------

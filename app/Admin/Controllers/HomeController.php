@@ -13,7 +13,9 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\QuestionController;
 use App\Models\Farmer;
 use App\Models\GroundnutVariety;
+use App\Models\Market;
 use App\Models\PestsAndDiseaseReport;
+use App\Models\PriceRecord;
 use App\Models\Product;
 use App\Models\ServiceProvider;
 use Encore\Admin\Layout\Row;
@@ -68,7 +70,7 @@ class HomeController extends Controller
         //return $content;
         $u = Auth::user();
         $content
-            ->title('NaRO - Dashboard')
+            ->title('C.A.I.T - Dashboard')
             ->description('Hello ' . $u->name . "!");
 
 
@@ -80,9 +82,9 @@ class HomeController extends Controller
             $row->column(3, function (Column $column) {
                 $column->append(view('widgets.box-5', [
                     'is_dark' => false,
-                    'title' => 'Registered Farmers',
-                    'sub_title' => 'All Farmers',
-                    'number' => number_format(Farmer::count()),
+                    'title' => 'Registered Users',
+                    'sub_title' => 'All Users',
+                    'number' => number_format(User::count()),
                     'link' => admin_url('users')
                 ]));
             });
@@ -90,31 +92,33 @@ class HomeController extends Controller
             $row->column(3, function (Column $column) {
                 $column->append(view('widgets.box-5', [
                     'is_dark' => false,
-                    'title' => 'Service Providers',
-                    'sub_title' => 'All registered service providers',
-                    'number' => number_format(ServiceProvider::count()),
-                    'link' => admin_url('service-providers')
+                    'title' => 'Markets',
+                    'sub_title' => 'Markets',
+                    'number' => number_format(Market::count()),
+                    'link' => admin_url('markets')
                 ]));
             });
             $row->column(3, function (Column $column) {
                 $column->append(view('widgets.box-5', [
                     'is_dark' => false,
-                    'title' => 'Farm produce',
-                    'sub_title' => 'All products',
-                    'number' => number_format(Product::count()),
-                    'link' => admin_url('products')
+                    'title' => 'Missing prices',
+                    'sub_title' => 'Missing prices',
+                    'number' => number_format(PriceRecord::where('status', 'Pending')->count()),
+                    'link' => admin_url('price-records')
                 ]));
             });
             $row->column(3, function (Column $column) {
                 $column->append(view('widgets.box-5', [
                     'is_dark' => false,
-                    'title' => 'Gardens',
-                    'sub_title' => 'All registered gardens',
-                    'number' => number_format(Garden::count()),
-                    'link' => admin_url('gardens')
+                    'title' => 'Submitted Prices',
+                    'sub_title' => 'Submitted Prices',
+                    'number' => number_format(PriceRecord::where('status', 'Submitted')->count()),
+                    'link' => admin_url('price-records')
                 ]));
             });
         });
+
+        return $content;
         $content->row(function (Row $row) {
             $row->column(4, function (Column $column) {
                 $pests = PestsAndDiseaseReport::where([])->orderBy('created_at', 'desc')->limit(5)->get();

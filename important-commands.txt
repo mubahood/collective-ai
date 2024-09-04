@@ -33,7 +33,7 @@ php artisan make:migration create_garden_activities_table
 php artisan make:migration add_gps_to_pests_and_disease_reports --table=pests_and_disease_reports 
 php artisan make:migration add_has_listened_to_intro_to_online_course_students --table=online_course_students
 php artisan make:migration add_cols_to_gardens --table=gardens
-php artisan make:migration add_data_to_price_records --table=price_records
+php artisan make:migration add_sybmitted_byA_to_price_records --table=price_records
 
 
 

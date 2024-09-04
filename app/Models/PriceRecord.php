@@ -95,4 +95,34 @@ class PriceRecord extends Model
     {
         return $this->belongsTo(District::class);
     }
+
+    //appends for commodity_text
+    public function getCommodityTextAttribute()
+    {
+        if ($this->commodity == null) {
+            return 'No Commodity';
+        }
+        return $this->commodity->name;
+    }
+
+    //appends for market_text
+    protected $appends = ['commodity_text','market_text','parish_text'];
+
+    //appends for market_text
+    public function getMarketTextAttribute()
+    {
+        if ($this->market == null) {
+            return 'No Market';
+        }
+        return $this->market->name;
+    } 
+
+    //getter for parish_text
+    public function getParishTextAttribute()
+    {
+        if ($this->parish == null) {
+            return 'No Parish';
+        }
+        return $this->parish->name_text;
+    } 
 }

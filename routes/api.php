@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get("process-price-records", [Utils::class, "process_price_records"]);
 
 Route::middleware([EnsureTokenIsValid::class])->group(function () {
+    Route::get("price-records", [ApiResurceController::class, "price_records"]);
+    Route::POST("price-record-update", [ApiResurceController::class, "price_record_update"]);
+
     Route::get("service-providers", [ApiResurceController::class, "service_providers"]);
     Route::get("gardens", [ApiResurceController::class, "gardens"]);
     Route::get("financial-records", [ApiResurceController::class, "financial_records"]);

@@ -19,8 +19,10 @@ use App\Models\Parish;
 use App\Models\Person;
 use App\Models\PestsAndDisease;
 use App\Models\PestsAndDiseaseReport;
+use App\Models\PriceRecord;
 use App\Models\Product;
 use App\Models\ServiceProvider;
+use App\Models\User;
 use App\Models\Utils;
 use App\Traits\ApiResponser;
 use Carbon\Carbon;
@@ -697,6 +699,50 @@ class ApiResurceController extends Controller
     public function service_providers()
     {
         return $this->success(ServiceProvider::where([])->orderby('id', 'desc')->get(), 'Success');
+    }
+    public function price_records(Request $r)
+    {
+        $u = $r->user;
+        if ($u == null) {
+            return $this->error('User not found.');
+        }
+        $u = User::find($u->id); 
+        $markets = [];
+        if ($u->middle_name != null) {
+            if (is_array($u->middle_name)) {
+                $markets = $u->middle_name;
+            }
+        } 
+        return $this->success(PriceRecord::whereIn(
+            'market_id', $markets
+        )->orderby('id', 'desc')->get(), 'Success');
+    }
+
+    public function price_record_update(Request $r)
+    {
+        $rec = PriceRecord::find($r->id);
+
+        $u = Administrator::find($r->user_id);
+        if ($u == null) {
+            return $this->error('User not found.');
+        }
+
+        if ($rec == null) {
+            return $this->error('Record not found.');
+        }
+
+        $rec->wholesale_price = $r->wholesale_price;
+        $rec->retail_price = $r->retail_price;
+        $rec->comment = $r->comment;
+        $rec->status = $r->status;
+        $rec->submitted_by_user_id = $r->submitted_by_user_id;
+        try {
+            $rec->save();
+            $rec = PriceRecord::find($rec->id);
+            return $this->success($rec, 'Success');
+        } catch (\Throwable $t) {
+            return $this->error('Failed to save record, becase ' . $t->getMessage() . '');
+        }
     }
     public function counselling_centres()
     {

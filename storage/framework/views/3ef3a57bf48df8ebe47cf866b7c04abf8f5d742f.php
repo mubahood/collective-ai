@@ -8,9 +8,9 @@ use App\Models\Utils;
     <!-- Logo -->
     <a href="<?php echo e(admin_url('/'), false); ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><?php echo 'NaRO Groundnut'; ?></span>
+        <span class="logo-mini"><?php echo 'C.A.I.T Groundnut'; ?></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><?php echo 'NaRO Groundnut'; ?></span>
+        <span class="logo-lg"><?php echo 'C.A.I.T Groundnut'; ?></span>
     </a>
 
     <!-- Header Navbar -->
