@@ -126,7 +126,7 @@ Route::get('migrate', function () {
 });
 Route::get('app', function () {
     //redirec to url('naro-v3.apk');
-    return redirect(url('naro-v3.apk'));
+    return redirect(url('app.apk'));
 });
 
 //api generation

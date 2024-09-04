@@ -20,7 +20,11 @@ class DataCollectionGenerator extends Model
 
         //deleting
         self::deleting(function ($m) {
-            throw new Exception('Cannot delete this record'); 
+            //delete all releated records
+            $records = PriceRecord::where('data_collection_generator_id', $m->id)->get();
+            foreach ($records as $r) {
+                $r->delete();
+            }
         });
         self::creating(function ($m) {
             $due_date = $m->due_date;
@@ -101,5 +105,5 @@ class DataCollectionGenerator extends Model
     public function price_records()
     {
         return $this->hasMany(PriceRecord::class);
-    } 
+    }
 }
