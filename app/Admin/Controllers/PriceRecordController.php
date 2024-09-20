@@ -159,6 +159,48 @@ class PriceRecordController extends AdminController
             })->sortable()->hide();
         $grid->column('gps', __('Gps'))->sortable()->hide();
 
+        /* 
+            $table->string('purchasing_complexity')->nullable()->default('Medium');
+            $table->string('selling_complexity')->nullable()->default('Medium');
+        */
+
+        $grid->column('purchasing_complexity', __('Purchasing Complexity'))
+            ->display(function ($purchasing_complexity) {
+                $bgColor = 'bg-dark';
+                if ($purchasing_complexity == 'Low') {
+                    $bgColor = 'bg-danger';
+                } elseif ($purchasing_complexity == 'Medium') {
+                    $bgColor = 'bg-warning';
+                } elseif ($purchasing_complexity == 'High') {
+                    $bgColor = 'bg-success';
+                }
+                return "<span class='badge $bgColor'>$purchasing_complexity</span>";
+            })->sortable()
+            ->filter([
+                'Low' => 'Low',
+                'Medium' => 'Medium',
+                'High' => 'High',
+            ]);
+
+        //selling_complexity
+        $grid->column('selling_complexity', __('Selling Complexity'))
+            ->display(function ($selling_complexity) {
+                $bgColor = 'bg-dark';
+                if ($selling_complexity == 'Low') {
+                    $bgColor = 'bg-danger';
+                } elseif ($selling_complexity == 'Medium') {
+                    $bgColor = 'bg-warning';
+                } elseif ($selling_complexity == 'High') {
+                    $bgColor = 'bg-success';
+                }
+                return "<span class='badge $bgColor'>$selling_complexity</span>";
+            })->sortable()
+            ->filter([
+                'Low' => 'Low',
+                'Medium' => 'Medium',
+                'High' => 'High',
+            ]);
+
         return $grid;
     }
 

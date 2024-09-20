@@ -706,15 +706,16 @@ class ApiResurceController extends Controller
         if ($u == null) {
             return $this->error('User not found.');
         }
-        $u = User::find($u->id); 
+        $u = User::find($u->id);
         $markets = [];
         if ($u->middle_name != null) {
             if (is_array($u->middle_name)) {
                 $markets = $u->middle_name;
             }
-        } 
+        }
         return $this->success(PriceRecord::whereIn(
-            'market_id', $markets
+            'market_id',
+            $markets
         )->orderby('id', 'desc')->get(), 'Success');
     }
 
@@ -735,6 +736,8 @@ class ApiResurceController extends Controller
         $rec->retail_price = $r->retail_price;
         $rec->comment = $r->comment;
         $rec->status = $r->status;
+        $rec->selling_complexity = $r->selling_complexity;
+        $rec->purchasing_complexity = $r->purchasing_complexity;
         $rec->submitted_by_user_id = $r->submitted_by_user_id;
         try {
             $rec->save();

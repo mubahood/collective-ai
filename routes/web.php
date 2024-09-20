@@ -13,6 +13,41 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('gemini', function () {
+
+/* 
+AIzaSyCu9PvyIqV2MP_oES4eHi5JMS2SprAvEWY
+curl \
+  -H 'Content-Type: application/json' \
+  -d '{"contents":[{"parts":[{"text":"Explain how AI works"}]}]}' \
+  -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YOUR_API_KEY'
+*/
+    $GOOGLE_API_KEY = 'AIzaSyC9Mdls_ETVjOb_u5bjcqavSI4E8S1D2Vs';
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=$GOOGLE_API_KEY",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => '{
+            "contents": [{
+              "parts":[{"text": "How old is president Kabiala Joseph?"}]
+              }]
+             }',
+        CURLOPT_HTTPHEADER => array(
+            "Content-Type: application/json"
+        ),
+    ));
+    //display response
+    $response = curl_exec($curl);
+    echo "<pre>";
+    print_r($response);
+    echo "</pre>";
+    die();
+
     //in this route we will call the gemini api
     /* 
 curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$GOOGLE_API_KEY" \

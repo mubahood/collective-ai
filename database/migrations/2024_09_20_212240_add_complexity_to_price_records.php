@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddComplexityToPriceRecords extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('price_records', function (Blueprint $table) {
+            $table->string('purchasing_complexity')->nullable()->default('Medium');
+            $table->string('selling_complexity')->nullable()->default('Medium');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('price_records', function (Blueprint $table) {
+            //
+        });
+    }
+}
