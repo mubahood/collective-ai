@@ -86,7 +86,7 @@ class PriceRecordController extends AdminController
                 return $this->commodity->name;
             });
 
-        $grid->column('wholesale_price', __('Wholesale Price (UGX)'))
+        $grid->column('wholesale_price', __('Supplier Price (UGX)'))
             ->display(function ($wholesale_price) {
                 return number_format($wholesale_price);
             })->sortable()->editable();
@@ -164,7 +164,7 @@ class PriceRecordController extends AdminController
             $table->string('selling_complexity')->nullable()->default('Medium');
         */
 
-        $grid->column('purchasing_complexity', __('Purchasing Complexity'))
+        $grid->column('purchasing_complexity', __('Sourcing Complexity'))
             ->display(function ($purchasing_complexity) {
                 $bgColor = 'bg-dark';
                 if ($purchasing_complexity == 'Low') {
@@ -183,7 +183,7 @@ class PriceRecordController extends AdminController
             ]);
 
         //selling_complexity
-        $grid->column('selling_complexity', __('Selling Complexity'))
+        $grid->column('selling_complexity', __('Demand Complexity'))
             ->display(function ($selling_complexity) {
                 $bgColor = 'bg-dark';
                 if ($selling_complexity == 'Low') {
