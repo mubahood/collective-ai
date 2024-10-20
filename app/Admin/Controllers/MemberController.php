@@ -56,10 +56,10 @@ class MemberController extends AdminController
             });
 
         //middle_name
-        $grid->column('markets', __('Markets'))->display(function ($middle_name) {
+        $grid->column('middle_name', __('Markets'))->display(function ($middle_name) {
             //if $middle_name not an array
             if (!is_array($middle_name)) {
-                return 'N/A';
+                return $middle_name;
             }
             $markets = [];
             foreach ($middle_name as $market) {
