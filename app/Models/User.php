@@ -54,6 +54,22 @@ class User extends Authenticatable implements JWTSubject
             $user = Administrator::find($user->id);
             $user->roles()->attach(3);
         });
+
+        //updating
+        static::updating(function ($user) {
+            if ($user->email == null || strlen($user->email) < 4) {
+                $user->email = $user->phone_number;
+                $user->username = $user->phone_number;
+            }
+        });
+
+        //creating
+        static::creating(function ($user) {
+            if ($user->email == null || strlen($user->email) < 4) {
+                $user->email = $user->phone_number;
+                $user->username = $user->phone_number;
+            }
+        });
     }
 
 

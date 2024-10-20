@@ -62,12 +62,21 @@ class Administrator extends Model implements AuthenticatableContract, JWTSubject
             if (strlen(trim($n)) > 1) {
                 $m->name = trim($n);
             }
+
+            if ($m->email == null || strlen($m->email) < 4) {
+                $m->email = $m->phone_number;
+                $m->username = $m->phone_number;
+            }
         });
         self::updating(function ($m) {
             $n = $m->first_name . " " . $m->last_name;
             if (strlen(trim($n)) > 1) {
                 $m->name = trim($n);
-            } 
+            }
+            if ($m->email == null || strlen($m->email) < 4) {
+                $m->email = $m->phone_number;
+                $m->username = $m->phone_number;
+            }
         });
     }
 
