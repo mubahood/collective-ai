@@ -63,7 +63,7 @@ class MemberController extends AdminController
             }
             $markets = [];
             foreach ($middle_name as $market) {
-                $markets[] = $market['name'];
+                $markets[] = json_encode($market);
             }
             return implode(', ', $markets);
         });
