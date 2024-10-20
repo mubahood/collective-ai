@@ -19,7 +19,7 @@ class Market extends Model
                 $m->subcounty_id = $p->subcounty_id;
                 $m->gps = trim($m->gps);
                 if ($m->gps == null || $m->gps == '') {
-                    $m->gps = $p->lat.','.$p->lng;
+                    $m->gps = $p->lat . ',' . $p->lng;
                 }
             }
         });
@@ -31,9 +31,19 @@ class Market extends Model
                 $m->district_id = $p->district_id;
                 $m->subcounty_id = $p->subcounty_id;
                 if ($m->gps == null || $m->gps == '') {
-                    $m->gps = $p->lat.','.$p->lng;
+                    $m->gps = $p->lat . ',' . $p->lng;
                 }
             }
+        });
+
+        
+        self::created(function ($m) {
+            Utils::process_price_records();
+        });
+
+        //updating
+        self::updated(function ($m) {
+            Utils::process_price_records();
         });
     }
 

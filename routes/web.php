@@ -9,12 +9,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PestAndDiseaseController;
+use App\Models\Utils;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
+Route::get('process-price-records', function () {
+    Utils::process_price_records();
+});
 Route::get('gemini', function () {
 
-/* 
+    /* 
 AIzaSyCu9PvyIqV2MP_oES4eHi5JMS2SprAvEWY
 curl \
   -H 'Content-Type: application/json' \

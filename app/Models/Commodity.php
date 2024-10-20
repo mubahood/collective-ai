@@ -9,6 +9,20 @@ class Commodity extends Model
 {
     use HasFactory;
 
+    //created
+    public static function boot()
+    {
+        parent::boot();
+        self::created(function ($m) {
+            Utils::process_price_records();
+        });
+
+        //updating
+        self::updated(function ($m) {
+            Utils::process_price_records();
+        });
+    }
+
     //process_price
     public function process_price()
     {

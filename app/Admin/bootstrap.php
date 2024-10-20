@@ -33,7 +33,7 @@ use App\Models\User;
 use App\Models\Utils;
 use Dflydev\DotAccessData\Util;
 
-Utils::process_price_records(); 
+Utils::process_price_records();
 /* $u = Auth::user();
 $u = User::find($u->id);
 $array = [];
