@@ -55,6 +55,19 @@ class MemberController extends AdminController
                 return date('d-m-Y', strtotime($created_at));
             });
 
+        //middle_name
+        $grid->column('middle_name', __('Markets'))->display(function ($middle_name) {
+            //if $middle_name not an array
+            if (!is_array($middle_name)) {
+                return 'N/A';
+            }
+            $markets = [];
+            foreach ($middle_name as $market) {
+                $markets[] = $market['name'];
+            }
+            return implode(', ', $markets);
+        });
+
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             if ($actions->getKey() == 1) {
