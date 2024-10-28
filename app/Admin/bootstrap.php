@@ -91,7 +91,7 @@ Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
 
 //disable batch select in grid
 \Encore\Admin\Grid::init(function (\Encore\Admin\Grid $grid) {
-    $grid->disableBatchActions();
+    // $grid->disableBatchActions();
 });
 
 //disable tools in form
