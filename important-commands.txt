@@ -1,4 +1,4 @@
-lsphp artisan make:component Alert --inline
+e:\Sue\my data\Aqualama\destop tranfer\laravel commands.txtlsphp artisan make:component Alert --inline
 
 php artisan migrate
 
@@ -126,3 +126,6 @@ php artisan make:model PriceRecord -m
 
 
 php artisan admin:make PriceRecordController --model=App\\Models\\PriceRecord
+
+$table->string('units')->nullable();
+            $table->string('supplier_difficulty')->nullable();
