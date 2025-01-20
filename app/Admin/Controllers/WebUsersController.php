@@ -105,7 +105,7 @@ class WebUsersController extends AdminController
     protected function form()
     {
         $form = new Form(new WebUser());
-
+    
         $form->text('location', __('Location'));
         $form->text('commodity', __('Commodity'));
        $form->text('units', __('units'));
@@ -125,7 +125,6 @@ class WebUsersController extends AdminController
             'High' => 'High',
             ]
         );
-
         return $form;
     }
-}
+}  

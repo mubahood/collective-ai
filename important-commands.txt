@@ -124,7 +124,6 @@ php artisan make:model PriceRecord -m
 
 
 
-
 php artisan admin:make PriceRecordController --model=App\\Models\\PriceRecord
 
 $table->string('units')->nullable();
