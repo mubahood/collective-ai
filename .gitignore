@@ -1,5 +1,5 @@
 .env
 .DS_Store
-
+.log
 public/naro-v3.apk
 public/naro-v3.apk
