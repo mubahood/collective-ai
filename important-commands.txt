@@ -120,7 +120,7 @@ php artisan make:model MarketReport -m
 php artisan make:model Market -m
 php artisan make:model ServiceProvider -m
 php artisan make:model DataCollectionGenerator -m
-php artisan make:model PriceRecord -m
+php artisan make:model WebUser
 
 
 
