@@ -207,7 +207,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/* Route::get('/clear', function() {
+Route::get('/clear', function() {
 
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
@@ -217,4 +217,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     return "Cleared!";
  
  });
- */
+ 
