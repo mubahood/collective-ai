@@ -40,5 +40,5 @@ Route::group([
     $router->resource('users', MemberController::class);
     $router->resource('data-collection-generators', DataCollectionGeneratorController::class);
     $router->resource('price-records', PriceRecordController::class);
-    $router->resource('web-users', WebUsersController::class);
+    $router->resource('web-users', WebUserController::class);
 });

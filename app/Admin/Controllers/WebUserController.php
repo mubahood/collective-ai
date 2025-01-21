@@ -8,7 +8,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class WebUsersController extends AdminController
+class WebUserController extends AdminController
 {
     /**
      * Title for current resource.

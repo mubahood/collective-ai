@@ -620,7 +620,7 @@ class ComposerStaticInitda89eef54c810448a827ed04bb3da82f
         'App\\Admin\\Controllers\\ServiceProviderController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ServiceProviderController.php',
         'App\\Admin\\Controllers\\SubcountyController' => __DIR__ . '/../..' . '/app/Admin/Controllers/SubcountyController.php',
         'App\\Admin\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Admin/Controllers/UserController.php',
-        'App\\Admin\\Controllers\\WebUsersController' => __DIR__ . '/../..' . '/app/Admin/Controllers/WebUsersController.php',
+        'App\\Admin\\Controllers\\WebUserController' => __DIR__ . '/../..' . '/app/Admin/Controllers/WebUserController.php',
         'App\\Admin\\Extensions\\Column\\FloatBar' => __DIR__ . '/../..' . '/app/Admin/Extensions/Column/FloatBar.php',
         'App\\Admin\\Extensions\\Column\\OpenMap' => __DIR__ . '/../..' . '/app/Admin/Extensions/Column/OpenMap.php',
         'App\\Admin\\Extensions\\Column\\UrlWrapper' => __DIR__ . '/../..' . '/app/Admin/Extensions/Column/UrlWrapper.php',
