@@ -12,16 +12,7 @@ use App\Http\Controllers\PestAndDiseaseController;
 use App\Models\Utils;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
-Route::get('/clear', function() {
 
-    Artisan::call('cache:clear');
-    Artisan::call('config:clear');
-    Artisan::call('config:cache');
-    Artisan::call('view:clear');
- 
-    return "Cleared!";
- 
- });
 Route::get('process-price-records', function () {
     Utils::process_price_records();
 });
@@ -215,3 +206,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/* Route::get('/clear', function() {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+ 
+    return "Cleared!";
+ 
+ });
+ */
