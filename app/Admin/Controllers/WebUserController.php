@@ -27,15 +27,48 @@ class WebUserController extends AdminController
         $grid = new Grid(new WebUser());
 
         $grid->column('id', __('Id'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->hide();
+        $grid->column('updated_at', __('Updated at'))->hide();
         $grid->column('location', __('Location'));
         $grid->column('commodity', __('Commodity'));
+        $grid->column('units', __('units'));
         $grid->column('supplier_cost', __('Supplier cost'));
+        $grid->column('supplier_difficulty', __('supplier_difficulty'))
+            ->display(function ($demand) {
+                $bgColor = 'bg-dark';
+                if ($demand == 'Low') {
+                    $bgColor = 'bg-danger';
+                } elseif ($demand == 'Medium') {
+                    $bgColor = 'bg-warning';
+                } elseif ($demand == 'High') {
+                    $bgColor = 'bg-success';
+                }
+                return "<span class='badge $bgColor'>$demand</span>";
+            })->sortable()
+            ->filter([
+                'Low' => 'Low',
+                'Medium' => 'Medium',
+                'High' => 'High',
+            ]);
+
         $grid->column('retail_price', __('Retail price'));
-        $grid->column('demand', __('Demand'));
-        $grid->column('units', __('Units'));
-        $grid->column('supplier_difficulty', __('Supplier difficulty'));
+        $grid->column('demand', __('Demand'))
+            ->display(function ($demand) {
+                $bgColor = 'bg-dark';
+                if ($demand == 'Low') {
+                    $bgColor = 'bg-danger';
+                } elseif ($demand == 'Medium') {
+                    $bgColor = 'bg-warning';
+                } elseif ($demand == 'High') {
+                    $bgColor = 'bg-success';
+                }
+                return "<span class='badge $bgColor'>$demand</span>";
+            })->sortable()
+            ->filter([
+                'Low' => 'Low',
+                'Medium' => 'Medium',
+                'High' => 'High',
+            ]);
 
         return $grid;
     }
