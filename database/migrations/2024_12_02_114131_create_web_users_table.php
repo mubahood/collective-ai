@@ -13,15 +13,17 @@ class CreateWebUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('web_users', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('location')->nullable();
-            $table->string('commodity')->nullable();
-            $table->bigInteger('supplier_cost')->nullable();
-            $table->bigInteger('retail_price')->nullable();
-            $table->string('demand')->nullable();
-        });
+        if (!Schema::hasTable('web_users')) {
+            Schema::create('web_users', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+                $table->string('location')->nullable();
+                $table->string('commodity')->nullable();
+                $table->bigInteger('supplier_cost')->nullable();
+                $table->bigInteger('retail_price')->nullable();
+                $table->string('demand')->nullable();
+            });
+        }
     }
 
     /**
