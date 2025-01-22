@@ -31,7 +31,7 @@ class UserController extends Controller
 
         return $content
             ->title('Register')
-            ->body(MultipleSteps::make($steps));
+            ->body(Mul tipleSteps::make($steps));
 
 
         return $content;
