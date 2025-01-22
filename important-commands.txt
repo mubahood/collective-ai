@@ -124,7 +124,7 @@ php artisan make:model WebUser
 
 
 
-php artisan admin:make PriceRecordController --model=App\\Models\\PriceRecord
+php artisan admin:make WebUserController --model=App\Models\WebUser
 
 $table->string('units')->nullable();
             $table->string('supplier_difficulty')->nullable();
